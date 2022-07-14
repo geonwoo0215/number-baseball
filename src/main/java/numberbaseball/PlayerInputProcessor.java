@@ -20,13 +20,24 @@ public class PlayerInputProcessor {
         input = bf.readLine();
     }
 
-    public boolean isNumber() {
+    public boolean validateNumber(){
+        try{
+            isNumber();
+            toIntegerList();
+            isNotOverlap();
+            isThreeDigit();
+        } catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public void isNumber() {
        try{
            Integer.parseInt(input);
        }catch (Exception e){
-           return false;
+           throw new RuntimeException();
        }
-       return true;
     }
 
     public void toIntegerList(){
@@ -35,18 +46,16 @@ public class PlayerInputProcessor {
                 .collect(Collectors.toList());
     }
 
-    public boolean isNotOverlap(){
+    public void isNotOverlap(){
         if(playerInput.stream().distinct().count()!= NUMBER_DIGIT){
-            return false;
+            throw new RuntimeException();
         }
-        return true;
     }
 
-    public boolean isThreeDigit(){
+    public void isThreeDigit(){
         if(playerInput.stream().count()!=NUMBER_DIGIT){
-            return false;
+            throw new RuntimeException();
         }
-        return true;
     }
 
 }
