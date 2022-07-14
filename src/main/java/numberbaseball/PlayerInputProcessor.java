@@ -18,6 +18,7 @@ public class PlayerInputProcessor {
 
     public void getPlayerInput() throws IOException {
         input = bf.readLine();
+        validateNumber();
     }
 
     public boolean validateNumber(){
