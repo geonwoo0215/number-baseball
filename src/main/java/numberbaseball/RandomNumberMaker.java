@@ -11,8 +11,12 @@ public class RandomNumberMaker {
     public void makeRandomNumber(){
         while(randomNumber.size()<NUMBER_DIGIT){
             int num = getSingleDigit();
-            if(!randomNumber.contains(num)) randomNumber.add(num);
+            if(isNotExist(num)) randomNumber.add(num);
         }
+    }
+
+    private boolean isNotExist(int num) {
+        return !randomNumber.contains(num);
     }
 
     private int getSingleDigit() {
