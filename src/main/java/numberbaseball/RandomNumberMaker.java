@@ -10,8 +10,7 @@ public class RandomNumberMaker {
 
     public void makeRandomNumber(){
         while(randomNumber.size()<NUMBER_DIGIT){
-            int num = getSingleDigit();
-            addRandomNumber(num);
+            addRandomNumber(getSingleDigit());
         }
     }
 
