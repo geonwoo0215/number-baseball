@@ -42,8 +42,11 @@ public class PlayerInputProcessor {
         return true;
     }
 
-
-
-
+    public boolean isThreeDigit(){
+        if(playerInput.stream().count()!=NUMBER_DIGIT){
+            return false;
+        }
+        return true;
+    }
 
 }
