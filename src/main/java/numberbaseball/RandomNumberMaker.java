@@ -10,9 +10,13 @@ public class RandomNumberMaker {
 
     public void makeRandomNumber(){
         while(randomNumber.size()<NUMBER_DIGIT){
-            int num = (int)(Math.random()*9+1);
+            int num = getSingleDigit();
             if(!randomNumber.contains(num)) randomNumber.add(num);
         }
+    }
+
+    private int getSingleDigit() {
+        return (int) (Math.random() * 9 + 1);
     }
 
 
