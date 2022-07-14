@@ -35,6 +35,14 @@ public class PlayerInputProcessor {
                 .collect(Collectors.toList());
     }
 
+    public boolean isNotOverlap(){
+        if(playerInput.stream().distinct().count()!= NUMBER_DIGIT){
+            return false;
+        }
+        return true;
+    }
+
+
 
 
 
