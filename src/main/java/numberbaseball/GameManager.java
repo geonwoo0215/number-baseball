@@ -29,7 +29,11 @@ public class GameManager {
                 numberComparer.judge();
                 messageManger.inputResponse(numberComparer.getBall(), numberComparer.getStrike());
 
-                if (numberComparer.isThreeStrike()) break;
+                if (numberComparer.isThreeStrike())
+                {
+                    messageManger.correct();
+                    break;
+                }
 
             }
         } while (gameRetry());
