@@ -13,42 +13,47 @@ public class MessageManger {
     private final String BALL = "볼 ";
     private final String STRIKE = "스트라이크";
     private final String NOTHING = "낫싱";
+    private boolean inputValid;
+    private boolean answerValid;
     private BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-    private PlayerInputProcessor playerInputProcessor = new PlayerInputProcessor();
-    private NumberComparer numberComparer = new NumberComparer();
+    private String input;
 
-    public String input() throws IOException {
-        return bf.readLine();
+    public boolean isInputValid() {
+        return inputValid;
+    }
+
+    public boolean isAnswerValid() {
+        return answerValid;
+    }
+
+    public String getInput() {
+        return input;
+    }
+
+    public void setInputValid(boolean inputValid) {
+        this.inputValid = inputValid;
+    }
+
+    public void setAnswerValid(boolean answerValid) {
+        this.answerValid = answerValid;
     }
 
     public void inputRequest() throws IOException {
+        System.out.print(INPUT_MESSAGE);
+        this.input = bf.readLine();
+    }
 
-        try{
-            System.out.println(INPUT_MESSAGE);
-            playerInputProcessor.validateNumber(input());
-        } catch (Exception e){
-            System.out.println(WARNING_MESSAGE);
-            inputRequest();
-        }
-
+    public void wrongRequest(){
+        System.out.println(WARNING_MESSAGE);
     }
 
     public void retryRequest() throws IOException {
-
-        try {
-            System.out.println(ANSWER_MESSAGE);
-            System.out.println(RETRY_MESSAGE);
-            playerInputProcessor.validateAnswerNumber(input());
-        } catch (Exception e){
-            System.out.println(WARNING_MESSAGE);
-            retryRequest();
-        }
-
+        System.out.println(ANSWER_MESSAGE);
+        System.out.println(RETRY_MESSAGE);
+        this.input = bf.readLine();
     }
 
-    public void inputResponse(){
-        int ball = numberComparer.getBall();
-        int strike = numberComparer.getStrike();
+    public void inputResponse(int ball, int strike){
         StringBuilder sb = new StringBuilder();
         if(ball>0){
             sb.append(ball).append(BALL);
@@ -59,6 +64,7 @@ public class MessageManger {
         if(strike==0&&ball==0){
             sb.append(NOTHING);
         }
+        System.out.println(sb);
     }
 
 }
