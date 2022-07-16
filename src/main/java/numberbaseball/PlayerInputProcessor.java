@@ -73,7 +73,7 @@ public class PlayerInputProcessor {
     }
 
     private void isThreeDigit(){
-        if(playerInput.stream().count()!=NUMBER_DIGIT){
+        if(playerInput.size()!=NUMBER_DIGIT){
             throw new RuntimeException();
         }
     }
