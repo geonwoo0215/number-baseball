@@ -23,6 +23,12 @@ public class NumberComparer {
         isBall();
     }
 
+    public boolean isThreeStrike(){
+        if(this.strike==3){
+            return true;
+        }
+        return false;
+    }
 
     public void isStrike(){
         strike = 0;
