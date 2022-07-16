@@ -30,7 +30,7 @@ public class NumberComparer {
         return false;
     }
 
-    public void isStrike(){
+    private void isStrike(){
         strike = 0;
         for(int i : playerInput){
             if(randomNumber.contains(i)&&playerInput.indexOf(i)==randomNumber.indexOf(i)){
@@ -39,7 +39,7 @@ public class NumberComparer {
         }
     }
 
-    public void isBall(){
+    private void isBall(){
         ball = 0;
         for(int i : playerInput){
             if(randomNumber.contains(i)&&playerInput.indexOf(i)!=randomNumber.indexOf(i)){
