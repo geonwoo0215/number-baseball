@@ -43,12 +43,13 @@ public class MessageManger {
         this.input = bf.readLine();
     }
 
+    public void correct(){System.out.println(ANSWER_MESSAGE);}
+
     public void wrongRequest(){
         System.out.println(WARNING_MESSAGE);
     }
 
     public void retryRequest() throws IOException {
-        System.out.println(ANSWER_MESSAGE);
         System.out.println(RETRY_MESSAGE);
         this.input = bf.readLine();
     }
