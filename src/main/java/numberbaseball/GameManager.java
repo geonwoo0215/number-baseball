@@ -13,11 +13,15 @@ public class GameManager {
     public void gameStart() throws IOException {
 
         do {
-            randomNumberMaker.makeRandomNumber();
-            numberComparer.setRandomNumber(randomNumberMaker.getRandomNumber());
+            gameSet();
             gamePlay();
         } while (gameRetry());
 
+    }
+
+    private void gameSet() {
+        randomNumberMaker.makeRandomNumber();
+        numberComparer.setRandomNumber(randomNumberMaker.getRandomNumber());
     }
 
     private void gamePlay() throws IOException {
