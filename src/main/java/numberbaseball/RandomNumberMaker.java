@@ -8,10 +8,15 @@ public class RandomNumberMaker {
 
     private LinkedList<Integer> randomNumber = new LinkedList<>();
 
+
     public void makeRandomNumber(){
         while(randomNumber.size()<NUMBER_DIGIT){
             addRandomNumber(getSingleDigit());
         }
+    }
+
+    public LinkedList<Integer> getRandomNumber() {
+        return randomNumber;
     }
 
     private void addRandomNumber(int num) {
