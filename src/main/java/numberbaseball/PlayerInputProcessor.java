@@ -11,29 +11,21 @@ import java.util.stream.Collectors;
 public class PlayerInputProcessor {
 
     private final int NUMBER_DIGIT = 3;
-    private final BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
     private List<Integer> playerInput = new LinkedList<>();
-    private String input;
 
-    public void getPlayerInput() throws IOException {
-        input = bf.readLine();
-        validateNumber();
+
+
+    public void validateNumber(String input) {
+
+        isNumber(input);
+        toIntegerList(input);
+        isNotOverlap();
+        isThreeDigit();
+
     }
 
-    public boolean validateNumber(){
-        try{
-            isNumber();
-            toIntegerList();
-            isNotOverlap();
-            isThreeDigit();
-        } catch (Exception e){
-            return false;
-        }
-        return true;
-    }
-
-    public void isNumber() {
+    public void isNumber(String input) {
        try{
            Integer.parseInt(input);
        }catch (Exception e){
@@ -41,7 +33,7 @@ public class PlayerInputProcessor {
        }
     }
 
-    public void toIntegerList(){
+    public void toIntegerList(String input){
         playerInput = Arrays.stream(input.split(""))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
