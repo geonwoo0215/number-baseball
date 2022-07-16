@@ -6,16 +6,16 @@ import java.io.InputStreamReader;
 
 public class MessageManger {
 
-    private final String INPUT_MESSAGE = "숫자를 입력해주세요 : ";
-    private final String ANSWER_MESSAGE = "3개의 숫자를 모두 맞혔습니다.! 게임 종료";
-    private final String RETRY_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
-    private final String WARNING_MESSAGE = "잘못된 입력입니다.";
-    private final String BALL = "볼 ";
-    private final String STRIKE = "스트라이크";
-    private final String NOTHING = "낫싱";
+    private static final String INPUT_MESSAGE = "숫자를 입력해주세요 : ";
+    private static final String ANSWER_MESSAGE = "3개의 숫자를 모두 맞혔습니다.! 게임 종료";
+    private static final String RETRY_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+    private static final String WARNING_MESSAGE = "잘못된 입력입니다.";
+    private static final String BALL = "볼 ";
+    private static final String STRIKE = "스트라이크";
+    private static final String NOTHING = "낫싱";
     private boolean inputValid;
     private boolean answerValid;
-    private BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     private String input;
 
     public boolean isInputValid() {

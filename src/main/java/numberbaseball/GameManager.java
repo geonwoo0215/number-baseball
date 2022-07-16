@@ -4,10 +4,10 @@ import java.io.IOException;
 
 public class GameManager {
 
-    private MessageManger messageManger = new MessageManger();
-    private RandomNumberMaker randomNumberMaker = new RandomNumberMaker();
-    private NumberComparer numberComparer = new NumberComparer();
-    private PlayerInputProcessor playerInputProcessor = new PlayerInputProcessor();
+    private final MessageManger messageManger = new MessageManger();
+    private final RandomNumberMaker randomNumberMaker = new RandomNumberMaker();
+    private final NumberComparer numberComparer = new NumberComparer();
+    private final PlayerInputProcessor playerInputProcessor = new PlayerInputProcessor();
 
 
     public void gameStart() throws IOException {
@@ -55,10 +55,7 @@ public class GameManager {
             if(messageManger.isAnswerValid())break;
             messageManger.wrongRequest();
         }
-        if(playerInputProcessor.getRetryInput().equals("1")){
-            return true;
-        }
-        return false;
+        return playerInputProcessor.getRetryInput().equals("1");
 
     }
 

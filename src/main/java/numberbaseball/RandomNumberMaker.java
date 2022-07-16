@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class RandomNumberMaker {
 
-    private final int NUMBER_DIGIT = 3;
+    private static final int NUMBER_DIGIT = 3;
 
     private LinkedList<Integer> randomNumber ;
 

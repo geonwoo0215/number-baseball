@@ -24,10 +24,7 @@ public class NumberComparer {
     }
 
     public boolean isThreeStrike(){
-        if(this.strike==3){
-            return true;
-        }
-        return false;
+        return this.strike == 3;
     }
 
     private void isStrike(){
