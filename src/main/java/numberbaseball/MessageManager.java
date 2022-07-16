@@ -26,12 +26,6 @@ public class MessageManager {
         this.input = bf.readLine();
     }
 
-    public void correct(){System.out.println(ANSWER_MESSAGE);}
-
-    public void wrongRequest(){
-        System.out.println(WARNING_MESSAGE);
-    }
-
     public void retryRequest() throws IOException {
         System.out.println(RETRY_MESSAGE);
         this.input = bf.readLine();
@@ -49,6 +43,12 @@ public class MessageManager {
             sb.append(NOTHING);
         }
         System.out.println(sb);
+    }
+
+    public void correct(){System.out.println(ANSWER_MESSAGE);}
+
+    public void wrongRequest(){
+        System.out.println(WARNING_MESSAGE);
     }
 
 }

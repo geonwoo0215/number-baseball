@@ -10,6 +10,14 @@ public class NumberComparer {
     private int strike;
     private int ball;
 
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
+
     public void setRandomNumber(List<Integer> randomNumber) {
         this.randomNumber = randomNumber;
     }
@@ -45,11 +53,4 @@ public class NumberComparer {
         }
     }
 
-    public int getStrike() {
-        return strike;
-    }
-
-    public int getBall() {
-        return ball;
-    }
 }

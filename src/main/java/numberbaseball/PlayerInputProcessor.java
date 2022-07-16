@@ -12,6 +12,14 @@ public class PlayerInputProcessor {
     private List<Integer> playerInput = new LinkedList<>();
     private String retryInput;
 
+    public String getRetryInput() {
+        return retryInput;
+    }
+
+    public List<Integer> getPlayerInput() {
+        return playerInput;
+    }
+
     public boolean validateInput(String input) {
 
         try{
@@ -23,14 +31,6 @@ public class PlayerInputProcessor {
             return false;
         }
         return true;
-    }
-
-    public String getRetryInput() {
-        return retryInput;
-    }
-
-    public List<Integer> getPlayerInput() {
-        return playerInput;
     }
 
     public boolean validateAnswerInput(String retryInput){
