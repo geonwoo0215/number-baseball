@@ -7,8 +7,8 @@ public class NumberComparer {
     private List<Integer> randomNumber = new LinkedList<>();
     private List<Integer> playerInput = new LinkedList<>();
 
-    public int strike;
-    public int ball;
+    private int strike;
+    private int ball;
 
     public void setRandomNumber(List<Integer> randomNumber) {
         this.randomNumber = randomNumber;
@@ -17,6 +17,12 @@ public class NumberComparer {
     public void setPlayerInput(List<Integer> playerInput) {
         this.playerInput = playerInput;
     }
+
+    public void judge(){
+        isStrike();
+        isBall();
+    }
+
 
     public void isStrike(){
         strike = 0;
