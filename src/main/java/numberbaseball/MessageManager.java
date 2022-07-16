@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class MessageManger {
+public class MessageManager {
 
     private static final String INPUT_MESSAGE = "숫자를 입력해주세요 : ";
     private static final String ANSWER_MESSAGE = "3개의 숫자를 모두 맞혔습니다.! 게임 종료";
@@ -13,29 +13,12 @@ public class MessageManger {
     private static final String BALL = "볼 ";
     private static final String STRIKE = "스트라이크";
     private static final String NOTHING = "낫싱";
-    private boolean inputValid;
-    private boolean answerValid;
+
     private final BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     private String input;
 
-    public boolean isInputValid() {
-        return inputValid;
-    }
-
-    public boolean isAnswerValid() {
-        return answerValid;
-    }
-
     public String getInput() {
         return input;
-    }
-
-    public void setInputValid(boolean inputValid) {
-        this.inputValid = inputValid;
-    }
-
-    public void setAnswerValid(boolean answerValid) {
-        this.answerValid = answerValid;
     }
 
     public void inputRequest() throws IOException {
