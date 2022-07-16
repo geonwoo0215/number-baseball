@@ -25,6 +25,17 @@ public class PlayerInputProcessor {
 
     }
 
+    public void validateAnswerNumber(String input){
+        isNumber(input);
+        isOneOrTwo(input);
+    }
+
+    public void isOneOrTwo(String input){
+        if (!input.equals("1") && !input.equals("2")) {
+            throw new RuntimeException();
+        }
+    }
+
     public void isNumber(String input) {
        try{
            Integer.parseInt(input);
