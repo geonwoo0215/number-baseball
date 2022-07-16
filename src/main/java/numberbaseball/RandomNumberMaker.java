@@ -6,10 +6,11 @@ public class RandomNumberMaker {
 
     private final int NUMBER_DIGIT = 3;
 
-    private LinkedList<Integer> randomNumber = new LinkedList<>();
+    private LinkedList<Integer> randomNumber ;
 
 
     public void makeRandomNumber(){
+        randomNumber = new LinkedList<>();
         while(randomNumber.size()<NUMBER_DIGIT){
             addRandomNumber(getSingleDigit());
         }
