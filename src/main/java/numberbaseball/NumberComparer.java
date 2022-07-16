@@ -36,4 +36,11 @@ public class NumberComparer {
         }
     }
 
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
 }
