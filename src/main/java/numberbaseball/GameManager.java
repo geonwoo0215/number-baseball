@@ -15,34 +15,40 @@ public class GameManager {
         do {
             randomNumberMaker.makeRandomNumber();
             numberComparer.setRandomNumber(randomNumberMaker.getRandomNumber());
-
-            while (true) {
-
-                while (true) {
-                    messageManger.inputRequest();
-                    messageManger.setInputValid(playerInputProcessor.validateInput(messageManger.getInput()));
-                    if (messageManger.isInputValid()) break;
-                    messageManger.wrongRequest();
-                }
-
-                numberComparer.setPlayerInput(playerInputProcessor.getPlayerInput());
-                numberComparer.judge();
-                messageManger.inputResponse(numberComparer.getBall(), numberComparer.getStrike());
-
-                if (numberComparer.isThreeStrike())
-                {
-                    messageManger.correct();
-                    break;
-                }
-
-            }
+            gamePlay();
         } while (gameRetry());
-
-
 
     }
 
-    public boolean gameRetry() throws IOException {
+    private void gamePlay() throws IOException {
+        while (true) {
+            gameInput();
+            gameCompare();
+
+            if (numberComparer.isThreeStrike()) {
+                messageManger.correct();
+                break;
+            }
+
+        }
+    }
+
+    private void gameCompare() {
+        numberComparer.setPlayerInput(playerInputProcessor.getPlayerInput());
+        numberComparer.judge();
+        messageManger.inputResponse(numberComparer.getBall(), numberComparer.getStrike());
+    }
+
+    private void gameInput() throws IOException {
+        while (true) {
+            messageManger.inputRequest();
+            messageManger.setInputValid(playerInputProcessor.validateInput(messageManger.getInput()));
+            if (messageManger.isInputValid()) break;
+            messageManger.wrongRequest();
+        }
+    }
+
+    private boolean gameRetry() throws IOException {
         while(true){
             messageManger.retryRequest();
             messageManger.setAnswerValid(playerInputProcessor.validateAnswerInput(messageManger.getInput()));
