@@ -32,9 +32,23 @@ public class GameManager {
                 if (numberComparer.isThreeStrike()) break;
 
             }
-        } while ();
+        } while (gameRetry());
 
 
+
+    }
+
+    public boolean gameRetry() throws IOException {
+        while(true){
+            messageManger.retryRequest();
+            messageManger.setAnswerValid(playerInputProcessor.validateAnswerInput(messageManger.getInput()));
+            if(messageManger.isAnswerValid())break;
+            messageManger.wrongRequest();
+        }
+        if(playerInputProcessor.getRetryInput().equals("1")){
+            return true;
+        }
+        return false;
 
     }
 
