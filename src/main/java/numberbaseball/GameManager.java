@@ -38,7 +38,6 @@ public class GameManager {
     }
 
     private void gameCompare() {
-        numberComparer.setPlayerInput(playerInputProcessor.getPlayerInput());
         numberComparer.judge();
         messageManager.inputResponse(numberComparer.getBall(), numberComparer.getStrike());
     }
@@ -46,7 +45,10 @@ public class GameManager {
     private void gameInput() throws IOException {
         while (true) {
             messageManager.inputRequest();
-            if (playerInputProcessor.validateInput(messageManager.getInput())) break;
+            if (playerInputProcessor.validateInput(messageManager.getInput())){
+                numberComparer.setPlayerInput(playerInputProcessor.getPlayerInput());
+                break;
+            }
             messageManager.wrongRequest();
         }
     }
